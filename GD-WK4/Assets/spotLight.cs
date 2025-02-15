@@ -55,6 +55,7 @@ public class SpotlightFollow2D : MonoBehaviour
         {
             Debug.Log("cool down is on " + cooldownTimer);
             cooldownTimer -= Time.deltaTime;
+            boostBar.value = cooldownTimer;
             if (cooldownTimer <= 0)
             {
                 isOnCooldown = false;

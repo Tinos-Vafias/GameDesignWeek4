@@ -12,8 +12,6 @@ public class PlayerControl : MonoBehaviour
     public float health;
     Rigidbody2D rb;
     public float maxHealth;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,29 +19,39 @@ public class PlayerControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void updateHealthBar(float currHealth, float maxHealth){
-        HPBar.value = currHealth/maxHealth;
-    }
-
     void Update()
     {
         speedX = Input.GetAxisRaw("Horizontal") * movSpeed;
         speedY = Input.GetAxisRaw("Vertical") * movSpeed;
         rb.linearVelocity= new Vector2(speedX, speedY);
 
-        if (Input.GetKey(KeyCode.RightShift))
+        if (Input.GetKey(KeyCode.RightShift)) //to take out once we have enemies
         {
            takeDamage(0.1f);
         }
         HPBar.value = (health/maxHealth)*100;
         
+        //--------------------------------------------NOT DONE--------------------------------------------//
+        if (Input.GetKey(KeyCode.Space))
+        {
+           attack();
+        }
     }
 
-    
+    public void updateHealth(float addedVal){
+        health += addedVal;
+    }
+
     public void takeDamage(float damageAmount){
         health -= damageAmount;
+        Debug.Log("player took damage");
         if (health <- 0){
             //they die
+            Debug.Log("player died");
         }
+    }
+
+    public void attack(){
+        Debug.Log("player attacking");
     }
 }
