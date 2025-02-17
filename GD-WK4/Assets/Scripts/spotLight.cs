@@ -16,6 +16,9 @@ public class SpotlightFollow2D : MonoBehaviour
     private float boostTime;
     private float cooldownTimer;
 
+    //CV
+    private CircleCollider2D circleCollider;
+    
     [SerializeField] private Slider boostBar;
     private bool isOnCooldown = false;
     private float maxBoostTime = 15f;
@@ -25,6 +28,7 @@ public class SpotlightFollow2D : MonoBehaviour
     {
         boostBar.gameObject.SetActive(true);
         spotlight = GetComponent<Light2D>();
+        circleCollider = GetComponent<CircleCollider2D>();
         boostBar.maxValue = maxBoostTime;
         boostBar.value = 0;
     }
@@ -43,14 +47,20 @@ public class SpotlightFollow2D : MonoBehaviour
         {
             spotlight.pointLightOuterRadius = Mathf.Min(spotlight.pointLightOuterRadius + radiusIncrease * Time.deltaTime, maxRadius);
             boostTime += Time.deltaTime;
-            boostBar.value = boostTime;
+            boostBar.value = boostTime; 
             Debug.Log("BOOST IS ON " + boostTime);
+            
+            //CV
+            circleCollider.radius = spotlight.pointLightOuterRadius;
         }
         else if(isOnCooldown || !Input.GetKey(KeyCode.LeftShift))
         {
             Debug.Log("Lights are low");
             spotlight.pointLightOuterRadius = Mathf.Max(spotlight.pointLightOuterRadius - radiusIncrease * Time.deltaTime * 2f, minRadius);
-
+            
+            //CV
+            circleCollider.radius = spotlight.pointLightOuterRadius;
+            
             if (isOnCooldown)
         {
             Debug.Log("cool down is on " + cooldownTimer);
