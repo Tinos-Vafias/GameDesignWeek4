@@ -81,5 +81,16 @@ public class SpotlightFollow2D : MonoBehaviour
             isOnCooldown = true;
             cooldownTimer = cooldownTime;
         }
+        
+        if (spotlight.pointLightOuterRadius >= 4.75f && spotlight.pointLightOuterRadius <= 5f)
+        {
+            circleCollider.enabled = true;
+            Debug.Log("Collision enabled");
+        }
+        else
+        {
+            circleCollider.enabled = false;
+            
+        }
     }
 }
