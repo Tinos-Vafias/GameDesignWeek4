@@ -44,16 +44,16 @@ public class SpotlightFollow2D : MonoBehaviour
             spotlight.pointLightOuterRadius = Mathf.Min(spotlight.pointLightOuterRadius + radiusIncrease * Time.deltaTime, maxRadius);
             boostTime += Time.deltaTime;
             boostBar.value = boostTime;
-            Debug.Log("BOOST IS ON " + boostTime);
+            //Debug.Log("BOOST IS ON " + boostTime);
         }
         else if(isOnCooldown || !Input.GetKey(KeyCode.LeftShift))
         {
-            Debug.Log("Lights are low");
+            //Debug.Log("Lights are low");
             spotlight.pointLightOuterRadius = Mathf.Max(spotlight.pointLightOuterRadius - radiusIncrease * Time.deltaTime * 2f, minRadius);
 
             if (isOnCooldown)
         {
-            Debug.Log("cool down is on " + cooldownTimer);
+            //Debug.Log("cool down is on " + cooldownTimer);
             cooldownTimer -= Time.deltaTime;
             boostBar.value = cooldownTimer;
             if (cooldownTimer <= 0)
