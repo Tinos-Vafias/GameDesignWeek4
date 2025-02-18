@@ -48,7 +48,7 @@ public class SpotlightFollow2D : MonoBehaviour
             spotlight.pointLightOuterRadius = Mathf.Min(spotlight.pointLightOuterRadius + radiusIncrease * Time.deltaTime, maxRadius);
             boostTime += Time.deltaTime;
             boostBar.value = boostTime; 
-            Debug.Log("BOOST IS ON " + boostTime);
+            //Debug.Log("BOOST IS ON " + boostTime);
             
             //CV
             circleCollider.radius = spotlight.pointLightOuterRadius;
