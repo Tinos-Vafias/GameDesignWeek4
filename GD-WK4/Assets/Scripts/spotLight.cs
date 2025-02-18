@@ -48,7 +48,7 @@ public class SpotlightFollow2D : MonoBehaviour
             spotlight.pointLightOuterRadius = Mathf.Min(spotlight.pointLightOuterRadius + radiusIncrease * Time.deltaTime, maxRadius);
             boostTime += Time.deltaTime;
             boostBar.value = boostTime; 
-            Debug.Log("BOOST IS ON " + boostTime);
+            //Debug.Log("BOOST IS ON " + boostTime);
             
             //CV
             circleCollider.radius = spotlight.pointLightOuterRadius;
@@ -80,6 +80,17 @@ public class SpotlightFollow2D : MonoBehaviour
         {
             isOnCooldown = true;
             cooldownTimer = cooldownTime;
+        }
+        
+        if (spotlight.pointLightOuterRadius >= 4.75f && spotlight.pointLightOuterRadius <= 5f)
+        {
+            circleCollider.enabled = true;
+            Debug.Log("Collision enabled");
+        }
+        else
+        {
+            circleCollider.enabled = false;
+            
         }
     }
 }
