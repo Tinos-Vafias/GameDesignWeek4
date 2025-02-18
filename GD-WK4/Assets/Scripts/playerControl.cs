@@ -32,10 +32,6 @@ public class PlayerControl : MonoBehaviour
         speedY = Input.GetAxisRaw("Vertical") * movSpeed;
         rb.linearVelocity= new Vector2(speedX, speedY);
 
-        if (Input.GetKeyDown(KeyCode.RightShift)) //to take out once we have enemies
-        {
-           takeDamage(0.1f);
-        }
         HPBar.value = (health/maxHealth)*100;
         
         //--------------------------------------------NOT DONE--------------------------------------------//
@@ -50,9 +46,10 @@ public class PlayerControl : MonoBehaviour
     }
 
     public void takeDamage(float damageAmount){
+        Debug.Log("player taking: " + damageAmount + " damage");
         health -= damageAmount;
-        Debug.Log("player took damage");
-        if (health <- 0){
+        Debug.Log("player health now: " + health);
+        if (health <= 0){
             //they die
             Debug.Log("player died");
         }
@@ -63,7 +60,7 @@ public class PlayerControl : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach(Collider2D enemy in hitEnemies){ //apply damage to the enemies
             Debug.Log("we hit " + enemy.name);
-            enemy.GetComponent<enemyControl>().TakeDamage(1);
+            enemy.GetComponent<enemyControl>().TakeDamage(2.5f);
         }
         
     }
