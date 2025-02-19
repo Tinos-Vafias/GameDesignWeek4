@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Spotlight
+  - Health
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Player
   - Spotlight
   - LightWall
-  - 
+  - Health
   - 
   - 
   - 

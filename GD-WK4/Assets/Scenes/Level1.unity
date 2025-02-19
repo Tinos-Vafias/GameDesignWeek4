@@ -379,6 +379,10 @@ PrefabInstance:
       value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2856327708726461480, guid: 79ea9e08b1549ad4d86d46b83240be6e, type: 3}
+      propertyPath: healthPickup
+      value: 
+      objectReference: {fileID: 9185237279732644047, guid: d55b0375ab6f269de82419f024b73ecc, type: 3}
+    - target: {fileID: 2856327708726461480, guid: 79ea9e08b1549ad4d86d46b83240be6e, type: 3}
       propertyPath: detectionRange
       value: 1
       objectReference: {fileID: 0}
@@ -2171,6 +2175,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7022991141734917146, guid: b3298475c85e58f44a081e329ec4cdb0, type: 3}
+      propertyPath: healthLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 8004123004073701358, guid: b3298475c85e58f44a081e329ec4cdb0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2508,6 +2516,10 @@ PrefabInstance:
       propertyPath: enemyAttack
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 2856327708726461480, guid: 79ea9e08b1549ad4d86d46b83240be6e, type: 3}
+      propertyPath: healthPickup
+      value: 
+      objectReference: {fileID: 9185237279732644047, guid: d55b0375ab6f269de82419f024b73ecc, type: 3}
     - target: {fileID: 2856327708726461480, guid: 79ea9e08b1549ad4d86d46b83240be6e, type: 3}
       propertyPath: detectionRange
       value: 2

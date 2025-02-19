@@ -18,7 +18,10 @@ public class PlayerControl : MonoBehaviour
 
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+   
     public Transform attackPoint;
+    public LayerMask healthLayers;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,6 +43,23 @@ public class PlayerControl : MonoBehaviour
         {
             Attack();
         }
+        //pick up health object
+        Collider2D healthCollider = Physics2D.OverlapCircle(transform.position, attackRange, healthLayers);
+        // set pick up radius to attack range for simplicity
+        if (healthCollider != null)
+        {
+            // Check if the collided object has the HealthPickup component
+            HealthPickup healthPickup = healthCollider.GetComponent<HealthPickup>();
+        
+            if (healthPickup != null)
+            {
+                // Add health and destroy the pickup
+                Debug.Log("Player picked up health");
+                updateHealth(healthPickup.healthAmount);
+                Destroy(healthCollider.gameObject);
+            }
+        }
+
     }
 
     public void updateHealth(float addedVal){

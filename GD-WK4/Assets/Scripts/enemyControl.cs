@@ -20,6 +20,7 @@ public class enemyControl : MonoBehaviour
     public float detectionRange;
     public float attackRange;
     public float enemyAttack;
+    public GameObject healthPickup;
     
     private Color defaultColor;
     private bool isFollowing;
@@ -65,6 +66,8 @@ public class enemyControl : MonoBehaviour
         spriteRenderer.enabled = false;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        //drop health object
+        Instantiate(healthPickup, transform.position, Quaternion.identity);
     }
    
     void patrol()
