@@ -32,10 +32,6 @@ public class PlayerControl : MonoBehaviour
         speedY = Input.GetAxisRaw("Vertical") * movSpeed;
         rb.linearVelocity= new Vector2(speedX, speedY);
 
-        if (Input.GetKeyDown(KeyCode.RightShift)) //to take out once we have enemies
-        {
-           takeDamage(0.1f);
-        }
         HPBar.value = (health/maxHealth)*100;
         
         //--------------------------------------------NOT DONE--------------------------------------------//

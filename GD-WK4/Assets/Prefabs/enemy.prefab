@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3880431462859244785}
   - component: {fileID: 2856327708726461480}
   - component: {fileID: 1008360137742268785}
+  - component: {fileID: 6056379528132888954}
   m_Layer: 6
   m_Name: enemy
   m_TagString: Untagged
@@ -104,6 +105,13 @@ MonoBehaviour:
   maxHealth: 10
   currHealth: 0
   newColor: {r: 0.9622642, g: 0.022694906, b: 0.022694906, a: 1}
+  movSpeed: 0
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  player: {fileID: 195129905817779769, guid: b3298475c85e58f44a081e329ec4cdb0, type: 3}
+  detectionRange: 0
+  attackRange: 0
+  enemyAttack: 0
 --- !u!61 &1008360137742268785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,3 +158,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!50 &6056379528132888954
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2852569238497516844}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
