@@ -67,7 +67,8 @@ public class enemyControl : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         //drop health object
-        Instantiate(healthPickup, transform.position, Quaternion.identity);
+        Vector3 offset = new Vector3(0.5f, 1f, 0);
+        Instantiate(healthPickup, transform.position + offset, Quaternion.identity);
     }
    
     void patrol()
