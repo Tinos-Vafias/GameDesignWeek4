@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,6 +52,7 @@ public class PlayerControl : MonoBehaviour
         if (health <- 0){
             //they die
             Debug.Log("player died");
+            SceneManager.LoadScene("EndScene");
         }
     }
     public void Attack(){

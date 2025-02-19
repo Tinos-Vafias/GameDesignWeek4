@@ -62,7 +62,7 @@ public class enemyControl : MonoBehaviour
 
     void Die(){
         Debug.Log("Enemy died");
-        spriteRenderer.enabled = false; // just make it disappear completely
+        spriteRenderer.enabled = false;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }
@@ -90,7 +90,6 @@ public class enemyControl : MonoBehaviour
     
     void followPlayer()
     {
-        // Debug.Log("following player");
         spriteRenderer.color = newColor; // change color to know when it found player
 
         Vector2 direction = (player.position - transform.position).normalized;
